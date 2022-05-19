@@ -1,0 +1,51 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-4">
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Acqid</label>
+        <input class="form-control" type="text" formControlName="acqid" required>
+        <span class="helper-text red-text" *ngIf="clientForm.get('acqid')?.invalid && clientForm.get('acqid')?.touched">
+        <span *ngIf="clientForm.get('acqid').errors['required']">Acqid не должен быть пустым</span></span>
+      </div>
+
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" type="text" formControlName="name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Caid</label>
+        <input class="form-control" type="text" formControlName="caid" required>
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <input class="form-control" type="text" formControlName="description" required>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary btn-block" type="submit">Add client</button>
+      </div>
+
+      <p><div class="form-group">
+        <div class="col-md-4">
+        <button type=button onclick="genScr(this)" id="btnGenScr" name="btnGenScr" class="btn btn-primary">Gen scr</button>
+      </div>
+    </div><p>
+
+
+
+    </form>
+
+
+    <!-- Textarea -->
+    <div class="form-group">
+      <span class="help-block"> Результирующий скрипт </span>
+      <div class="col-md-4">
+
+        <textarea disabled class="form-control" id="scrResult" name="scrResult"
+                  style="margin: 0px -261.672px 0px 0px; height: 320px; width: 577px; font-size: 9px;">document.form.client</textarea>
+      </div>
+    </div>
+  </div>
+</div>
