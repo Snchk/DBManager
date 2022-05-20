@@ -3,15 +3,16 @@ import { Client } from './client';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import {port} from '../../../../../index';
+//import {API_STR} from '../../../../../index';
 @Injectable({
   providedIn: 'root'
 })
 
 export class CrudService {
 
+  //port: string  =  port;
   // Node/Express API
-  REST_API: string = 'http://localhost:'+port+'/api/client';
+  REST_API: string = 'http://localhost:5000/api/client';
 
   // Http Header
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
